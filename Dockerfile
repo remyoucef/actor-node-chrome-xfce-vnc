@@ -1,15 +1,4 @@
-# Dockerfile contains instructions how to build a Docker image that
-# will contain all the code and configuration needed to run your actor.
-# For a full Dockerfile reference,
-# see https://docs.docker.com/engine/reference/builder/
-
-# First, specify the base Docker image. Apify provides the following
-# base images for your convenience:
-#  apify/actor-node-basic (Node.js 10 on Alpine Linux, small and fast)
-#  apify/actor-node-chrome (Node.js 10 + Chrome on Debian)
-#  apify/actor-node-chrome-xvfb (Node.js 10 + Chrome + Xvfb on Debian)
-# For more information, see https://apify.com/docs/actor#base-images
-# Note that you can use any other image from Docker Hub.
+# Node.js 10 + Chrome + Xvfb on Debian
 FROM apify/actor-node-chrome-xvfb
 
 USER 0
@@ -29,7 +18,7 @@ ENV HOME=/headless \
     NO_VNC_HOME=/headless/noVNC \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
-    VNC_RESOLUTION=1280x1024 \
+    VNC_RESOLUTION=1366x768 \
     VNC_PW=pwd \
     VNC_VIEW_ONLY=false
 WORKDIR $HOME
