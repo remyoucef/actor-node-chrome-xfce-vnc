@@ -1,5 +1,5 @@
 # Node.js 10 + Chrome + Xvfb on Debian
-FROM apify/actor-node-chrome-xvfb
+FROM apify/actor-node-chrome
 
 USER 0
 ## Connection ports for controlling the UI:
