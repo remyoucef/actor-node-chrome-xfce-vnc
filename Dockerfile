@@ -1,7 +1,7 @@
 # Node.js 10 + Chrome + Xvfb on Debian
 FROM apify/actor-node-chrome-xvfb
 
-USER 0
+USER root
 ## Connection ports for controlling the UI:
 # VNC port:5901
 # noVNC webport, connect via http://IP:6901/?password=vncpassword
@@ -48,7 +48,7 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./docker/common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-USER 1000
+USER myuser
 
 WORKDIR /home/myuser
 CMD /dockerstartup/vnc_startup.sh --wait & npm start
